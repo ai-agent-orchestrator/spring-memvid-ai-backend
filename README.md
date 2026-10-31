@@ -225,24 +225,7 @@ Regular expressions cannot detect every sensitive detail in free text. Preserve 
 
 Cancel individual jobs rather than killing a shared server. Cancellation cannot reverse tokens already processed. A timeout alone is not evidence that a reservation can be fully released.
 
-```mermaid
-%%{init: {"theme":"base","themeVariables":{"background":"#101720","primaryColor":"#153044","primaryTextColor":"#e4eaf1","lineColor":"#6f93b5","edgeLabelBackground":"#1b2a3a","fontFamily":"Arial"}}}%%
-flowchart TB
-    E["Calculate prompt and stage costs"] --> B{"Can reserve budget?"}
-    B -->|No| D["Reject further calls"]
-    B -->|Yes| O["Atomic reservation / OPEN"]
-    O --> X["Run approved model"]
-    X --> U{"Usage confirmed?"}
-    U -->|Yes| S["Settle / SETTLED"]
-    U -->|Unresolved| P["Track and reconcile"]
-    O -->|Confirmed unexecuted portion| R["Release / RELEASED"]
-    classDef process fill:#153044,stroke:#76d9f0,color:#e4eaf1;
-    classDef decision fill:#46391a,stroke:#e5c24e,color:#e4eaf1;
-    classDef stop fill:#42272d,stroke:#e99aa6,color:#e4eaf1;
-    class E,O,X,S,P,R process;
-    class B,U decision;
-    class D stop;
-```
+[![Cost reservation lifecycle: reserve, run, settle, release or reconcile](docs/assets/cost-reservation-flow.png)](docs/assets/cost-reservation-flow.svg)
 
 ## Execution: memory, refinement, review, final report
 
