@@ -38,7 +38,7 @@
 <summary><strong>1. 전체 흐름</strong></summary>
 
 ```mermaid
-%%{init: {"theme":"base","themeVariables":{"background":"#101720","primaryTextColor":"#e4eaf1","lineColor":"#a9c5dd","fontFamily":"Malgun Gothic, sans-serif","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","nodeSpacing":28,"rankSpacing":42}}}%%
+%%{init: {"theme":"base","themeVariables":{"background":"#101720","primaryTextColor":"#e4eaf1","lineColor":"#6f93b5","edgeLabelBackground":"#1b2a3a","fontFamily":"Malgun Gothic, sans-serif","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","nodeSpacing":28,"rankSpacing":42}}}%%
 flowchart TB
     USER["의뢰인 / 변호사"] --> SECURITY["Spring 보안 통제 / S1-S5"]
     SECURITY --> SG{"인증·사건 권한·세션 상태가 유효한가?"}
@@ -78,7 +78,7 @@ flowchart TB
 <summary><strong>2. 보안 통제 S1-S6</strong></summary>
 
 ```mermaid
-%%{init: {"theme":"base","themeVariables":{"primaryTextColor":"#e4eaf1","lineColor":"#a9c5dd","fontFamily":"Malgun Gothic, sans-serif","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","rankSpacing":40}}}%%
+%%{init: {"theme":"base","themeVariables":{"primaryTextColor":"#e4eaf1","lineColor":"#6f93b5","edgeLabelBackground":"#1b2a3a","fontFamily":"Malgun Gothic, sans-serif","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","rankSpacing":40}}}%%
 flowchart TB
     S1["S1 사용자 인증 · 로펌·사건 권한 확인"] --> S2["S2 프롬프트 주입 · 도구 접근 정책"]
     S2 --> S3["S3 개인정보 처리 · 외부 전송 정책"]
@@ -104,7 +104,7 @@ flowchart TB
 <summary><strong>3. 비용 통제 C1-C6</strong></summary>
 
 ```mermaid
-%%{init: {"theme":"base","themeVariables":{"primaryTextColor":"#e4eaf1","lineColor":"#a9c5dd","fontFamily":"Malgun Gothic, sans-serif","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","rankSpacing":40}}}%%
+%%{init: {"theme":"base","themeVariables":{"primaryTextColor":"#e4eaf1","lineColor":"#6f93b5","edgeLabelBackground":"#1b2a3a","fontFamily":"Malgun Gothic, sans-serif","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","rankSpacing":40}}}%%
 flowchart TB
     C1["C1 입력·최종 프롬프트 크기 제한"] --> C2["C2 테넌트·기간별 예산 확인"]
     C2 --> C3["C3 실행 단계·재시도·시간 한도 설정"]
@@ -132,7 +132,7 @@ flowchart TB
 <summary><strong>4. Python 실행 상세</strong></summary>
 
 ```mermaid
-%%{init: {"theme":"base","themeVariables":{"primaryTextColor":"#e4eaf1","lineColor":"#a9c5dd","fontFamily":"Malgun Gothic, sans-serif","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","rankSpacing":40}}}%%
+%%{init: {"theme":"base","themeVariables":{"primaryTextColor":"#e4eaf1","lineColor":"#6f93b5","edgeLabelBackground":"#1b2a3a","fontFamily":"Malgun Gothic, sans-serif","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","rankSpacing":40}}}%%
 flowchart TB
     VERIFY["내부 요청·만료·사건 범위 검증"] --> FILE["허용된 사건 파일로 매핑"]
     FILE --> NEED{"외부 임베딩이 필요한가?"}
