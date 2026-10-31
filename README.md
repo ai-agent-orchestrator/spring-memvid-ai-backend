@@ -42,7 +42,7 @@ Read the main path from top to bottom. Short rejection branches stay next to the
 <summary><strong>1. Vertical overview</strong></summary>
 
 ```mermaid
-%%{init: {"theme":"base","themeVariables":{"background":"#101720","primaryTextColor":"#e4eaf1","lineColor":"#a9c5dd","fontFamily":"Arial","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","nodeSpacing":28,"rankSpacing":42}}}%%
+%%{init: {"theme":"base","themeVariables":{"background":"#101720","primaryTextColor":"#e4eaf1","lineColor":"#6f93b5","edgeLabelBackground":"#1b2a3a","fontFamily":"Arial","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","nodeSpacing":28,"rankSpacing":42}}}%%
 flowchart TB
     USER["Client / Lawyer"] --> SECURITY["Spring security controls / S1-S5"]
     SECURITY --> SG{"Identity and session allowed?"}
@@ -83,7 +83,7 @@ flowchart TB
 <summary><strong>2. Security controls / S1-S6</strong></summary>
 
 ```mermaid
-%%{init: {"theme":"base","themeVariables":{"primaryTextColor":"#e4eaf1","lineColor":"#a9c5dd","fontFamily":"Arial","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","rankSpacing":40}}}%%
+%%{init: {"theme":"base","themeVariables":{"primaryTextColor":"#e4eaf1","lineColor":"#6f93b5","edgeLabelBackground":"#1b2a3a","fontFamily":"Arial","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","rankSpacing":40}}}%%
 flowchart TB
     S1["S1 Identity, firm and case authorization"] --> S2["S2 Prompt and tool-access policy"]
     S2 --> S3["S3 PII handling and transmission policy"]
@@ -109,7 +109,7 @@ flowchart TB
 <summary><strong>3. Cost controls / C1-C6</strong></summary>
 
 ```mermaid
-%%{init: {"theme":"base","themeVariables":{"primaryTextColor":"#e4eaf1","lineColor":"#a9c5dd","fontFamily":"Arial","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","rankSpacing":40}}}%%
+%%{init: {"theme":"base","themeVariables":{"primaryTextColor":"#e4eaf1","lineColor":"#6f93b5","edgeLabelBackground":"#1b2a3a","fontFamily":"Arial","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","rankSpacing":40}}}%%
 flowchart TB
     C1["C1 Bound input and final prompt size"] --> C2["C2 Check tenant and period budgets"]
     C2 --> C3["C3 Set stage, retry and deadline limits"]
@@ -137,7 +137,7 @@ flowchart TB
 <summary><strong>4. Python execution details</strong></summary>
 
 ```mermaid
-%%{init: {"theme":"base","themeVariables":{"primaryTextColor":"#e4eaf1","lineColor":"#a9c5dd","fontFamily":"Arial","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","rankSpacing":40}}}%%
+%%{init: {"theme":"base","themeVariables":{"primaryTextColor":"#e4eaf1","lineColor":"#6f93b5","edgeLabelBackground":"#1b2a3a","fontFamily":"Arial","fontSize":"18px"},"flowchart":{"htmlLabels":false,"curve":"linear","rankSpacing":40}}}%%
 flowchart TB
     VERIFY["Verify internal job, expiry and case scope"] --> FILE["Resolve authorized case file"]
     FILE --> NEED{"External embeddings required?"}
@@ -226,7 +226,7 @@ Regular expressions cannot detect every sensitive detail in free text. Preserve 
 Cancel individual jobs rather than killing a shared server. Cancellation cannot reverse tokens already processed. A timeout alone is not evidence that a reservation can be fully released.
 
 ```mermaid
-%%{init: {"theme":"base","themeVariables":{"background":"#101720","primaryColor":"#153044","primaryTextColor":"#e4eaf1","lineColor":"#a9c5dd","fontFamily":"Arial"}}}%%
+%%{init: {"theme":"base","themeVariables":{"background":"#101720","primaryColor":"#153044","primaryTextColor":"#e4eaf1","lineColor":"#6f93b5","edgeLabelBackground":"#1b2a3a","fontFamily":"Arial"}}}%%
 flowchart TB
     E["Calculate prompt and stage costs"] --> B{"Can reserve budget?"}
     B -->|No| D["Reject further calls"]
