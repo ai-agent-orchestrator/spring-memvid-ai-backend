@@ -222,24 +222,7 @@ Python은 사건 메모리를 검색하고 필요한 근거를 선택합니다. 
 
 전체 Python 서버를 종료하면 다른 사건도 영향을 받으므로 하드 캡은 작업 단위로 설계합니다. 공급자가 이미 처리한 토큰은 취소로 되돌릴 수 없으며, 타임아웃만으로 예약을 전액 해제하지 않습니다.
 
-```mermaid
-flowchart TB
-    E[최종 입력·예정 호출 비용 계산] --> B{예산 예약 가능?}
-    B -->|불가| D[후속 호출 거부]
-    B -->|가능| O[원자적 예약 / OPEN]
-    O --> X[허용 모델 실행]
-    X --> U{사용량 확인?}
-    U -->|확인| S[정산 / SETTLED]
-    U -->|불명확| P[미확정 추적 · 공급자 대조]
-    O -->|미실행 확인분| R[예약 해제 / RELEASED]
-
-    classDef process fill:#153044,stroke:#76d9f0,color:#e4eaf1;
-    classDef decision fill:#46391a,stroke:#e5c24e,color:#e4eaf1;
-    classDef stop fill:#42272d,stroke:#e99aa6,color:#e4eaf1;
-    class E,O,X,S,P,R process;
-    class B,U decision;
-    class D stop;
-```
+[![비용 예약 흐름: 예약, 실행, 정산, 해제 또는 대조](docs/assets/cost-reservation-flow.ko.png)](docs/assets/cost-reservation-flow.ko.svg)
 
 ## Python 실행 흐름: memvid → 정제 → 사람 검토 → 최종 보고서
 
